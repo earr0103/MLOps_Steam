@@ -2,8 +2,8 @@ import pandas as pd
 import fastapi
 from fastapi import FastAPI
 
-# Cargar el archivo csv
-df_useritemsgames = pd.read_csv('df_useritemsgames.csv')
+# Cargar el archivo parquet
+df_useritemsgames = pd.read_parquet('df_useritemsgames.parquet')
 
 # Crear la instancia de la API
 app = FastAPI()
