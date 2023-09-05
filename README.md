@@ -9,7 +9,10 @@ Antes de comenzar, asegúrate de tener instaladas las siguientes cosas:
 - Python 🐍
 - Amor por los videojuegos 🎮
 
-Luego, instala las bibliotecas que necesitas ejecutando `pip install -r requirements.txt`.
+Con eso listo procede a :
+- Clonar este repositorio en local.
+- Instala las bibliotecas que necesitas ejecutando `pip install -r requirements.txt`.
+- Ejecuta el comando `uvicorn main:app` en tu terminal para hacer el launch en tu servidor local.
 
 ## Proceso ETL (Extract, Transform, Load)
 
