@@ -126,6 +126,8 @@ def sentiment_analysis(year: int):
 
 @app.get('/recomendacion_juego/{product_id}')
 async def get_recomendacion_juego(product_id: int):
-    recommended_games = recomendacion_juego(product_id)
-    return {"Juegos recomendados": recommended_games}
+    title_id, recommended_games = recomendacion_juego(product_id)
+    if title_id == -1:
+        return {"Mensaje": "El product_id no existe en el DataFrame."}
+    return {"Juego ingresado": title_id, "Juegos recomendados": recommended_games}
 
