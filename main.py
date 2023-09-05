@@ -6,11 +6,6 @@ from ml import recomendacion_juego
 # Crear la instancia de la API
 app = FastAPI()
 
-# Función generadora para cargar datos bajo demanda
-def load_data():
-    for chunk in pd.read_parquet('df_useritemsgames.parquet', chunksize=1000):  # Ajusta el tamaño del chunk según la necesidad
-        yield chunk
-
 #Endpoint para obtener información de un jugador
 df_userdata = pd.read_parquet('userdata.parquet')
 
