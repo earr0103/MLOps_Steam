@@ -1,6 +1,7 @@
 import pandas as pd
 import fastapi
 from fastapi import FastAPI
+from ml import recomendacion_juego
 
 # Crear la instancia de la API
 app = FastAPI()
@@ -119,3 +120,12 @@ def sentiment_analysis(year: int):
             break
     
     return sentiment_counts
+
+
+# Endpoint para obtener recomendación de juegos
+
+@app.get('/recomendacion_juego/{product_id}')
+async def get_recomendacion_juego(product_id: int):
+    recommended_games = recomendacion_juego(product_id)
+    return {"Juegos recomendados": recommended_games}
+
